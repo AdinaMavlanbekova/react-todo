@@ -19,6 +19,7 @@ class App extends Component {
     super(props)
     this.state = {
       todos: [],
+      isLoading: true,
     }
     this.handleCreateTodo = this.handleCreateTodo.bind(this);
     this.onDelete = this.onDelete.bind(this);
@@ -30,6 +31,9 @@ componentDidMount() {
    console.log("did Mount")
    const localData = JSON.parse(localStorage.getItem("todos")) || [];
    this.setState({todos: localData});
+   setTimeout(() => {
+     this.setState({isLoading: false})
+   },2500)
 }
 
 componentDidUpdate() {
@@ -74,6 +78,11 @@ onEdit(id, newText) {
 }
 
   render() {
+    if(this.state.isLoading) {
+      return <div className='text-center mt-5'>
+          <img width={"200px"} src='https://mir-s3-cdn-cf.behance.net/project_modules/max_632/04de2e31234507.564a1d23645bf.gif' />
+      </div>
+    }
     return (
       <div className='App'>
         <Header count={this.state.todos.length} done={this.state.todos.filter((todo) => todo.status).length} />

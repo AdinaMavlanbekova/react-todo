@@ -14,6 +14,7 @@ class TodoList extends React.Component {
 
         const arr = this.props.todos.map( (todo) => {
             return <Todo 
+            key={todo.id}
              id={todo.id}
              text={todo.title}
              status={todo.status}
