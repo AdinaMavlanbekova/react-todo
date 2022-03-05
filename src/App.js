@@ -86,7 +86,7 @@ class App extends Component {
       </div>
     }
     return (
-      <div className="container">
+      <div className='container'>
         <div className='App'>
           <Header count={this.state.todos.length} done={this.state.todos.filter((todo) => todo.status).length} />
           <main className='main'>
