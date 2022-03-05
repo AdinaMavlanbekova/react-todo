@@ -80,7 +80,9 @@ onEdit(id, newText) {
   render() {
     if(this.state.isLoading) {
       return <div className='text-center mt-5'>
-          <img width={"200px"} src='https://mir-s3-cdn-cf.behance.net/project_modules/max_632/04de2e31234507.564a1d23645bf.gif' />
+          <img width={"200px"} src='https://mir-s3-cdn-cf.behance.net/project_modules/max_632/04de2e31234507.564a1d23645bf.gif'
+          alt="Preloder"
+          />
       </div>
     }
     return (
